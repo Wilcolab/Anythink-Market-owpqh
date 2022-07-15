@@ -157,6 +157,7 @@ router.post("/", auth.required, function(req, res, next) {
 });
 
 // return a item
+// looking for answer
 router.get("/:item", auth.optional, function(req, res, next) {
   Promise.all([
     req.payload ? User.findById(req.payload.id) : null,
