@@ -66,6 +66,6 @@ const Header = ({currentUser}) => {
         )}
       </nav>
     );
-}
+};
 
 export default Header;
