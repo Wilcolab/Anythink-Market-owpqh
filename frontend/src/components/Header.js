@@ -49,8 +49,7 @@ const LoggedInView = (props) => {
   );
 };
 
-const Header = ({appName, currentUser}) => {
-
+const Header = ({currentUser}) => {
     return (
       <nav
         className="navbar navbar-expand-md navbar-dark"
