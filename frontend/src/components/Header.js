@@ -49,7 +49,7 @@ const LoggedInView = (props) => {
   );
 };
 
-const Header = () => {
+const Header = (props) => {
 
     return (
       <nav
@@ -67,7 +67,6 @@ const Header = () => {
         )}
       </nav>
     );
-
 }
 
 export default Header;
