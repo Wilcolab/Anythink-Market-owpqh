@@ -19,7 +19,7 @@ const CommentInput = ({ slug, currentUser }) => {
     agent.Comments.create(slug, {
       body: body,
     }).then((payload) => {
-      dispatch({ type: ADD_COMMENT, payload });
+      this.props.onSubmit(payload);
     });
     setBody("");
   };
