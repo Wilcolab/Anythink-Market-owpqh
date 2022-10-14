@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import agent from "../../agent";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { ADD_COMMENT } from "../../constants/actionTypes";
 
 const mapDispatchToProps = (dispatch) => ({
@@ -8,6 +8,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const CommentInput = ({ slug, currentUser }) => {
+  const dispatch = useDispatch();
   const [body, setBody] = useState("");
 
   const setsBody = (ev) => {
@@ -19,7 +20,7 @@ const CommentInput = ({ slug, currentUser }) => {
     agent.Comments.create(slug, {
       body: body,
     }).then((payload) => {
-      onSubmit(payload);
+      dispatch({ type: ADD_COMMENT, payload });
     });
     setBody("");
   };
