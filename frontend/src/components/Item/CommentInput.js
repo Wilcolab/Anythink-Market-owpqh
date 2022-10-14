@@ -7,7 +7,7 @@ const mapDispatchToProps = (dispatch) => ({
   onSubmit: (payload) => dispatch({ type: ADD_COMMENT, payload }),
 });
 
-const CommentInput = ({ slug, currentUser }) => {
+const CommentInput = ({ slug, currentUser, onSubmit }) => {
   const [body, setBody] = useState("");
 
   const setsBody = (ev) => {
@@ -19,7 +19,7 @@ const CommentInput = ({ slug, currentUser }) => {
     agent.Comments.create(slug, {
       body: body,
     }).then((payload) => {
-      this.props.onSubmit(payload);
+      onSubmit(payload);
     });
     setBody("");
   };
