@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import agent from "../../agent";
-import { connect, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { ADD_COMMENT } from "../../constants/actionTypes";
 
 const mapDispatchToProps = (dispatch) => ({
