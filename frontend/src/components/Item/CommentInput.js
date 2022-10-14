@@ -8,7 +8,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const CommentInput = ({ slug, currentUser }) => {
-  const dispatch = useDispatch();
   const [body, setBody] = useState("");
 
   const setsBody = (ev) => {
